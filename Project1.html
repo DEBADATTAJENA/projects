@@ -1,0 +1,72 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website with Gallery</title>
+    <link rel="stylesheet" href="design.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <img src="logo.png" class="logo">
+
+            <nav>
+                <ul>
+                    <li> <a href="">Home</a></li>
+                    <li> <a href="">Office</a></li>
+                    <li> <a href="">Hotels</a></li>
+                    <li> <a href="">Contact Us</a></li>
+                </ul>
+            </nav>
+            <img src="menu.png" class="menu">
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="text-box">
+                    <h5>Our Products</h5>
+                    <h1><b>Simplicity</b><br> is the <b>ultimate</b> Sophistication </h1>
+                </div>
+                <img src="circle.png" class="icon1">
+                <img src="circle.png" class="icon2">
+                <img src="square.png" class="icon3">
+
+            </div>
+            <div class="col">
+                <div class="gallery">
+                    <img src="pic2.jpg" id="photo">
+                    <ul>
+                        <li class="btn">01</li>
+                        <li class="btn active">02</li>
+                        <li class="btn">03</li>
+                        <li class="btn">04</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <img src="circle.png" class="icon4">
+        <img src="square.png" class="icon5">
+
+    </div>
+    <script>
+        var btn = document.getElementsByClassName("btn");
+        var photo = document.getElementById("photo");
+        var images = new Array(
+            "pic1.jpg",
+            "pic2.jpg",
+            "pic3.jpg",
+            "pic4.jpg",
+        );
+
+        for (let i = 0; i < btn.length; i++) {
+            btn[i].onclick = function() {
+                photo.src = images[i]
+                let current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace("active", "");
+                this.className += " active";
+            };
+        }
+    </script>
+</body>
+
+</html>
